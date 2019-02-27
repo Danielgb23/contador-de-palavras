@@ -10,13 +10,24 @@
 int main() {
 
   char c;
+  int words=1;
 
   c = 1;
 
   while (c != '\n') {
     scanf("%c", &c);
+    if( c == ' ' || c == ',' || c == '.' || c == '!' || c == ';'){
+	while ( c == ' ' || c == ',' || c == '.' || c == '!' || c == ';')
+		scanf("%c", &c);
+	if (c == '\n')
+		break;
+	words++;
+}
+
+	
+
   }
 
-  printf("1\n");
+  printf("%d\n", words);
   return 0;
 }
